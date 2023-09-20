@@ -1,4 +1,33 @@
-<div class="container">
-  <div>form</div>
-  <img src="" alt="">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+  <div class="col-span-1 flex flex-col items-center justify-center h-screen">
+    <div class="fixed top-48">img</div>
+    <form class="w-3/5 text-center mb-14">
+      <app-input
+        type="text"
+        label="usuario"
+        labelAlign="text-center"
+        placeholder="Ingrese su nombre de usuario"
+      ></app-input>
+      <app-input
+        type="password"
+        label="contraseña"
+        labelAlign="text-center"
+        placeholder="Ingrese su contraseña"
+      ></app-input>
+    </form>
+    <app-button-blue></app-button-blue>
+  </div>
+  <img
+    class="
+      invisible
+      md:visible md:col-span-1
+      lg:col-span-2
+      h-screen
+      w-screen
+      object-cover
+      shadow-lg
+    "
+    src="./assets/img/login-img.png"
+    alt="cabaña"
+  />
 </div>

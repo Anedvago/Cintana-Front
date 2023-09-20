@@ -1,0 +1,25 @@
+<div class="mb-5">
+  <label
+    [class]="'block text-gray-700 text-md font-semibold mb-2 ' + labelAlign"
+    >{{ label | titlecase }}</label
+  >
+  <input
+    [type]="type"
+    id="usuario"
+    name="usuario"
+    class="
+      appearance-none
+      border border-gray-300
+      rounded
+      h-12
+      w-full
+      py-2
+      px-3
+      text-gray-700
+      leading-tight
+      focus:outline-none focus:shadow-outline focus:border-blue-600
+    "
+    [placeholder]="placeholder"
+    required
+  />
+</div>

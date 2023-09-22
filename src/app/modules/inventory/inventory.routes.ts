@@ -1,8 +1,40 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
+import { ArticlesComponent } from './pages/articles/articles.component';
+import { DesktopLayoutComponent } from './components/desktop-layout/desktop-layout.component';
+import { CategoriesComponent } from './pages/categories/categories.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { PurchasesComponent } from './pages/purchases/purchases.component';
+import { DischargedComponent } from './pages/discharged/discharged.component';
 export const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: DesktopLayoutComponent,
+    children: [
+      {
+        path: '',
+        component: HomeComponent,
+      },
+      {
+        path: 'articles',
+        component: ArticlesComponent,
+      },
+      {
+        path: 'services',
+        component: ServicesComponent,
+      },
+      {
+        path: 'categories',
+        component: CategoriesComponent,
+      },
+      {
+        path: 'purchases',
+        component: PurchasesComponent,
+      },
+      {
+        path: 'discharged',
+        component: DischargedComponent,
+      },
+    ],
   },
 ];

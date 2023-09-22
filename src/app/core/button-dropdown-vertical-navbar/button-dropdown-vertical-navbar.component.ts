@@ -29,6 +29,7 @@ export class ButtonDropdownVerticalNavbarComponent {
     }
     this.toggleDropdown();
     this.click.emit();
+    this.navigateTo(this.btn!.route!);
   }
 
   public toggleDropdown() {
@@ -49,7 +50,7 @@ export class ButtonDropdownVerticalNavbarComponent {
       this.buttons[indexActive].active = false;
     }
     this.buttons[index].active = true;
-    //this.navigateTo(this.buttons[index]!.route!);
+    this.navigateTo(this.buttons[index]!.route!);
   }
 
   public navigateTo(route: string) {

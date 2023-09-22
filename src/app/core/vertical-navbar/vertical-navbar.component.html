@@ -4,7 +4,29 @@
   </div>
 
   <div class="flex flex-col text-center">
-    <button
+    <app-button-vertical-navbar
+      [btn]="buttons[0]"
+      [index]="0"
+      (click)="click(0)"
+    ></app-button-vertical-navbar>
+    <app-button-dropdown-vertical-navbar
+      [btn]="buttons[1]"
+      [index]="1"
+      (click)="click(1)"
+      [buttons]="buttonsDropDownInventory"
+    ></app-button-dropdown-vertical-navbar>
+    <app-button-dropdown-vertical-navbar
+    [btn]="buttons[2]"
+    [index]="2"
+    (click)="click(2)"
+    [buttons]="buttonsDropDownReservations"
+  ></app-button-dropdown-vertical-navbar>
+    <app-button-vertical-navbar
+      [btn]="buttons[3]"
+      [index]="3"
+      (click)="click(3)"
+    ></app-button-vertical-navbar>
+    <!-- <button
       (click)="click(i)"
       *ngFor="let btn of buttons; index as i"
       [class]="
@@ -21,7 +43,7 @@
       "
     >
       {{ btn.name }}
-    </button>
+    </button> -->
     <!-- <button
       class="py-4 pl-10 text-left text-gray-400 capitalize hover:bg-gray-100"
     >

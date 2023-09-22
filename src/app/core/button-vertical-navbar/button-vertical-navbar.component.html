@@ -1,0 +1,10 @@
+<button
+  (click)="clicked()"
+  [ngClass]="{
+    ' bg-blue-50 border-r-4 border-blue-500': btn.active,
+    'hover:bg-gray-100': !btn.active,
+  }"
+  class="py-4 pl-10 text-left text-gray-400 capitalize w-full"
+>
+  {{ btn.name }}
+</button>

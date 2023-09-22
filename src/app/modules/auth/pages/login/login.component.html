@@ -8,15 +8,15 @@
     overflow-hidden
   "
 >
-  <div class="col-span-1 flex flex-col items-center justify-center h-screen">
-    <div class="fixed top-36">
+  <div class="col-span-1 flex flex-col items-center justify-center h-screen -mt-6">
+    <div class="mb-14">
       <img
         src="./assets/img/cintana-logo.jpg"
         alt="logo-cintana"
         class="h-28"
       />
     </div>
-    <form class="w-3/5 text-center mb-14">
+    <form class="w-3/5 text-center">
       <app-input
         type="text"
         label="usuario"
@@ -30,7 +30,7 @@
         placeholder="Ingrese su contraseña"
       ></app-input>
     </form>
-    <app-button-blue (event)="navigateTo()"></app-button-blue>
+    <app-button-blue class="mt-14" (event)="navigateTo()"></app-button-blue>
   </div>
   <img
     class="

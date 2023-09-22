@@ -4,18 +4,18 @@
     ' bg-blue-50 border-r-4 border-blue-500': btn.active,
     'hover:bg-gray-100': !btn.active
   }"
-  class="w-full py-4 pl-10 text-left text-gray-400 capitalize flex items-center justify-between"
+  class="
+    w-full
+    py-4
+    pl-10
+    text-left text-gray-400
+    capitalize
+    flex
+    items-center
+    justify-between
+  "
 >
   {{ btn.name }}
-  <!-- <span
-    [ngClass]="{
-      'pr-6 ': btn.active! && !isDropdownVisible,
-      'pl-5 rotate-180': !btn.active && !isDropdownVisible,
-    }"
-    class="material-symbols-outlined"
-  >
-    expand_more
-  </span> -->
   <span
     *ngIf="!isDropdownVisible"
     class="material-symbols-outlined"
@@ -32,9 +32,10 @@
   </span>
 </button>
 <div [ngClass]="{ hidden: !isDropdownVisible }" class="ml-14">
-  <app-button-vertical-navbar *ngFor="let btn of buttons;index as i"
-      [btn]="btn"
-      [index]="i"
-      (click)="clickedDown(i)"
-    ></app-button-vertical-navbar>
+  <app-button-vertical-navbar
+    *ngFor="let btn of buttons; index as i"
+    [btn]="btn"
+    [index]="i"
+    (click)="clickedDown(i)"
+  ></app-button-vertical-navbar>
 </div>

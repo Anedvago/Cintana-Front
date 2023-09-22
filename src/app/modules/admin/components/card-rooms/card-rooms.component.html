@@ -1,0 +1,28 @@
+<app-card class="bg-bla">
+  <div class="grid grid-cols-5 h-20 row-span1">
+    <span
+      [class]="
+        '
+        material-symbols-outlined
+        col-span-2
+        text-center
+        w-20
+        flex
+        items-center
+        justify-center
+        text-6xl
+        ' +
+        color +
+        ' ' +
+        textColor
+      "
+    >
+      bed
+    </span>
+    <div class="flex items-center justify-start col-span-3 font-bold">
+      <ng-content></ng-content>
+    </div>
+  </div>
+  <div class="text-7xl font-semibold row-span-1">10</div>
+  <div class="bg-red-300 row-span-1">Indicador</div>
+</app-card>

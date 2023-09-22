@@ -1,84 +1,21 @@
 <div class="grid grid-rows-3 grid-cols-4 gap-4 h-screen p-5">
-  <app-card>
-    <div class="grid grid-cols-5 h-20">
-      <span
-        class="
-          material-symbols-outlined
-          col-span-2
-          bg-blue-300
-          text-center
-          w-20
-          flex
-          items-center
-          justify-center
-          text-6xl text-blue-500
-        "
-      >
-        bed
-      </span>
-      <div class="col-span-3">text</div>
-    </div>
-  </app-card>
-  <app-card
-    ><div class="grid grid-cols-5 h-20">
-      <span
-        class="
-          material-symbols-outlined
-          col-span-2
-          bg-green-300
-          text-center
-          w-20
-          flex
-          items-center
-          justify-center
-          text-6xl text-green-500
-        "
-      >
-        bed
-      </span>
-      <div class="col-span-3">text</div>
-    </div></app-card
-  >
-  <app-card
-    ><div class="grid grid-cols-5 h-20">
-      <span
-        class="
-          material-symbols-outlined
-          col-span-2
-          bg-red-300
-          text-center
-          w-20
-          flex
-          items-center
-          justify-center
-          text-6xl text-red-700
-        "
-      >
-        bed
-      </span>
-      <div class="col-span-3">text</div>
-    </div>
-  </app-card>
-  <app-card>
-    <div class="grid grid-cols-5 h-20">
-      <span
-        class="
-          material-symbols-outlined
-          col-span-2
-          bg-orange-200
-          text-center
-          w-20
-          flex
-          items-center
-          justify-center
-          text-6xl text-orange-400
-        "
-      >
-        bed
-      </span>
-      <div class="col-span-3">text</div>
-    </div>
-  </app-card>
+  <app-card-rooms class="h-full" color="bg-blue-300" textColor="text-blue-500">
+    Total <br />
+    De Habitaciones
+  </app-card-rooms>
+  <app-card-rooms color="bg-green-300" textColor="text-green-500">
+    Habitaciones <br />
+    Libres
+  </app-card-rooms>
+  <app-card-rooms color="bg-red-300" textColor="text-red-700">
+    Habitaciones <br />
+    Ocupadas
+  </app-card-rooms>
+  <app-card-rooms color="bg-orange-200" textColor="text-orange-400">
+    Habitaciones <br />
+    Reservadas
+  </app-card-rooms>
+
   <app-card class="col-span-2"> Holas </app-card>
   <app-card class="row-span-2 col-span-2"> Holas </app-card>
   <app-card class="col-span-2"> Holas </app-card>

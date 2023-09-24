@@ -1,0 +1,11 @@
+<div
+  class="flex items-center justify-center h-screen w-screen fixed top-0 left-0 z-50"
+>
+  <div
+    class="bg-black fixed left-0 h-screen w-screen opacity-50 z-40 flex items-center justify-center"
+    (click)="closeModal()"
+  ></div>
+  <app-card class="flex w-2/3 h-2/3 z-50">
+    <div><ng-content></ng-content></div>
+  </app-card>
+</div>

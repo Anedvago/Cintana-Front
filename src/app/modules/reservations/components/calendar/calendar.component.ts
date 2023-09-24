@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FullCalendarModule } from "@fullcalendar/angular";
 import { CalendarOptions } from "@fullcalendar/core";
@@ -18,6 +18,9 @@ import { ButtonBlueComponent } from "src/app/core/button-blue/button-blue.compon
   styleUrls: ["./calendar.component.css"],
 })
 export class CalendarComponent {
+  @Output()
+  public eventClick: EventEmitter<any> = new EventEmitter<any>();
+
   public calendarOptions: CalendarOptions = {
     initialView: "dayGridMonth",
     plugins: [dayGridPlugin],
@@ -30,5 +33,6 @@ export class CalendarComponent {
 
   handleDateClick(arg: any) {
     console.log(arg.event.id + " " + arg.event.title);
+    this.eventClick.emit(arg.event);
   }
 }

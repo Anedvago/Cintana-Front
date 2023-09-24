@@ -3,11 +3,18 @@ import { CommonModule } from "@angular/common";
 import { CardRoomsComponent } from "../../components/card-rooms/card-rooms.component";
 import { CardComponent } from "src/app/core/card/card.component";
 import { TableComponent } from "src/app/core/table/table.component";
+import { VerticalBarComponent } from "../../components/vertical-bar/vertical-bar.component";
 
 @Component({
   selector: "app-dashboard",
   standalone: true,
-  imports: [CommonModule, CardRoomsComponent, CardComponent, TableComponent],
+  imports: [
+    CommonModule,
+    CardRoomsComponent,
+    CardComponent,
+    TableComponent,
+    VerticalBarComponent,
+  ],
   templateUrl: "./dashboard.component.html",
   styleUrls: ["./dashboard.component.css"],
 })

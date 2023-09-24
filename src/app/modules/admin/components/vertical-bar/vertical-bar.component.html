@@ -1,0 +1,14 @@
+<div
+  class="cont w-full h-full flex flex-col items-center justify-evenly overflow-hidden"
+>
+  <!-- <h2 class="font-bold text-left w-full">Ingresos ultimos meses</h2> -->
+  <h2 class="font-bold text-left w-full">Ingresos ultimos meses</h2>
+  <ngx-charts-bar-vertical
+    [scheme]="colorScheme"
+    [results]="monthsValue"
+    [gradient]="gradient"
+    [xAxis]="showXAxis"
+    [view]="view"
+  >
+  </ngx-charts-bar-vertical>
+</div>

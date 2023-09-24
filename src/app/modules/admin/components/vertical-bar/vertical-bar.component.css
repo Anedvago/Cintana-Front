@@ -1,0 +1,16 @@
+/* .cont {
+  overflow: hidden;
+}
+.graph {
+  display: block !important;
+  margin-left: -40px !important;
+  margin-bottom: -25px !important;
+}
+ */
+.graph {
+  all: unset !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: aqua !important;
+}

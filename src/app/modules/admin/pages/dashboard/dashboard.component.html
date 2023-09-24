@@ -37,7 +37,11 @@
     Reservadas
   </app-card-rooms>
 
-  <app-card class="col-span-2"> Holas </app-card>
-  <app-card class="row-span-2 col-span-2"> Holas </app-card>
-  <app-card class="col-span-2"> Holas </app-card>
+  <app-card class="col-span-2"> Indicadores </app-card>
+  <app-card class="row-span-2 col-span-2">
+    <app-table [columns]="columnsInd" [rows]="rowsInd"></app-table
+  ></app-card>
+  <app-card class="col-span-2">
+    <app-table [columns]="columsStock" [rows]="rowsStock"></app-table>
+  </app-card>
 </div>

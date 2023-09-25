@@ -17,22 +17,17 @@ export class LoginComponent {
 
   constructor(private router: Router, private authService: AuthService) {}
 
-  public login() {
+  public login(): void {
     this.authService.login(this.email, this.password).then((result: any) => {
       if (result.user != undefined) {
         this.navigateTo();
       } else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Error en la autenticacion!',
-          timer: 2000,
-        });
+        this.loginError();
       }
     });
   }
 
-  public navigateTo() {
+  public navigateTo(): void {
     this.router.navigate(['/admin/dashboard']);
   }
 
@@ -41,5 +36,14 @@ export class LoginComponent {
   }
   public passwordOnChange(event: any): void {
     this.password = event;
+  }
+
+  public loginError(): void {
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Error en la autenticacion!',
+      timer: 2000,
+    });
   }
 }

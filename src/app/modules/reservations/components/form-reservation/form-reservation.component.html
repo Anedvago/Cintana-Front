@@ -1,0 +1,30 @@
+<div class="mx-10">
+  <h1 class="w-full text-center font-bold text-lg">Formulario de nueva reservacion</h1>
+  <form class="grid grid-cols-3 gap-x-3">
+    <h2 class="w-full text-center font-bold">Informacion del cliente</h2>
+    <h2 class="w-full text-center font-bold">Informacion de la reserva</h2>
+    <h2 class="w-full text-center font-bold">Informacion de los servicios</h2>
+    <app-input type="text" label="Tipo de identificacion" labelAlign="left" placeholder="Cedula, Id, Nit"/>
+    <app-input type="text" label="Fecha" labelAlign="left" placeholder="2023/20/03"/>
+    <app-input type="text" label="Buscar Servicios" labelAlign="left" placeholder="Decoracion de habitaciones"/>
+    <app-input type="text" label="Identificacion" labelAlign="left" placeholder="17878589"/>
+    <app-input type="text" label="Cantidad de personas" labelAlign="left" placeholder="1, 2, 3..."/>
+    <div></div>
+    <app-input type="text" label="Nombre del titular de la reserva" labelAlign="left" placeholder="Ej. Carlos Gómez "/>
+    <app-input type="text" label="Habitación" labelAlign="left" placeholder="Ej. 103 "/>
+    <div></div>
+    <div></div>
+    <app-input type="text" label="Metodo de pago" labelAlign="left" placeholder="Ej. Transferencia "/>
+    <div></div>
+    <div></div>
+    <app-input type="text" label="Total a pagar" labelAlign="left" placeholder="Ej. $154.000 "/>
+    <div></div>
+    <div></div>
+    <app-input type="text" label="Total cancelado" labelAlign="left" placeholder="Ej. $120.000 "/>
+  </form>
+  <div class="w-full flex flex-row items-center justify-center">
+    <app-button-blue class="mx-2"> Cancelar </app-button-blue>
+    <app-button-blue class="mx-2"> Guardar </app-button-blue>
+  </div>
+ 
+</div>

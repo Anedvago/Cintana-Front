@@ -24,7 +24,7 @@ export class ReservationsComponent {
   public bookings!: any;
 
   constructor(private roomService: BookingService) {
-    /* this.getAllBookings(); */
+    this.getAllBookings();
   }
 
   public visivility: string = 'invisible';
@@ -47,11 +47,12 @@ export class ReservationsComponent {
   public getAllBookings() {
     this.roomService.getAllBookings().then((data: any) => {
       if (data != null) {
-        this.bookings = data.map((obj: any) => ({
+        /* this.bookings = data.map((obj: any) => ({
           ...obj,
           id: obj.id.toString(), // Convierte el id a cadena
         }));
-        console.log(this.bookings.slice());
+        console.log(this.bookings.slice()); */
+        this.bookings = data;
       }
     });
   }

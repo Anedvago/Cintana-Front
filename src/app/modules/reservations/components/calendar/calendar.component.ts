@@ -5,6 +5,7 @@ import { CalendarOptions, EventSourceInput } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { CardComponent } from 'src/app/core/card/card.component';
 import { ButtonBlueComponent } from 'src/app/core/button-blue/button-blue.component';
+import { BookingService } from '../../services/booking.service';
 @Component({
   selector: 'app-calendar',
   standalone: true,
@@ -20,8 +21,15 @@ import { ButtonBlueComponent } from 'src/app/core/button-blue/button-blue.compon
 export class CalendarComponent {
   @Output()
   public eventClick: EventEmitter<any> = new EventEmitter<any>();
-  @Input()
-  public eventsBooking: EventSourceInput | undefined = [];
+
+  public eventsBooking: EventSourceInput | undefined = [
+    {
+      id: '1',
+      start: '2023-09-25T08:00:00',
+      end: '2023-09-26T11:00:00',
+      title: 'Carlos Gómez / 103',
+    },
+  ];
 
   public calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
@@ -35,24 +43,27 @@ export class CalendarComponent {
       minute: '2-digit',
       hour12: false,
     },
-    events: this.eventsBooking /* [
-      {
-        id: '1',
-        title: 'Carlos Gomez / 203',
-        start: '2023-09-01',
-        end: '2023-09-02',
-      },
-      {
-        id: '2',
-        title: 'event 2',
-        start: '2023-09-01 08:00',
-        end: '2023-09-03 04:00',
-      },
-    ], */,
   };
+  constructor(private roomService: BookingService) {
+    this.getAllBookings();
+    console.log(this.eventsBooking);
+  }
 
   handleDateClick(arg: any) {
     console.log(arg.event.id + ' ' + arg.event.title);
     this.eventClick.emit(arg.event);
+  }
+
+  public getAllBookings() {
+    this.roomService.getAllBookings().then((data: any) => {
+      if (data != null) {
+        this.eventsBooking = data.map((obj: any) => ({
+          ...obj,
+          id: obj.id.toString(), // Convierte el id a cadena
+        }));
+        this.calendarOptions.events = this.eventsBooking;
+        console.log(JSON.stringify(this.eventsBooking));
+      }
+    });
   }
 }

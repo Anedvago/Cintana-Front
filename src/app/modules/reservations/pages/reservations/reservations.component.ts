@@ -21,10 +21,10 @@ import { EventSourceInput } from '@fullcalendar/core';
   styleUrls: ['./reservations.component.css'],
 })
 export class ReservationsComponent {
-  public bookings!: EventSourceInput | undefined;
+  public bookings!: any;
 
   constructor(private roomService: BookingService) {
-    this.getAllBookings();
+    /* this.getAllBookings(); */
   }
 
   public visivility: string = 'invisible';
@@ -47,8 +47,11 @@ export class ReservationsComponent {
   public getAllBookings() {
     this.roomService.getAllBookings().then((data: any) => {
       if (data != null) {
-        this.bookings = data;
-        console.log(this.bookings);
+        this.bookings = data.map((obj: any) => ({
+          ...obj,
+          id: obj.id.toString(), // Convierte el id a cadena
+        }));
+        console.log(this.bookings.slice());
       }
     });
   }

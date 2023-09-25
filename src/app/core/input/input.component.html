@@ -20,6 +20,8 @@
       focus:outline-none focus:shadow-outline focus:border-blue-600
     "
     [placeholder]="placeholder"
+    [(ngModel)]="value"
+    (ngModelChange)="changeValueInput()"
     required
   />
 </div>

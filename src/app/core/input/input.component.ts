@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { TitleCasePipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-input',
   standalone: true,
-  imports: [TitleCasePipe],
+  imports: [TitleCasePipe, FormsModule],
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.css'],
 })
@@ -16,4 +17,12 @@ export class InputComponent {
   public labelAlign!: string;
   @Input()
   public placeholder!: string;
+
+  @Output()
+  public changeValue: EventEmitter<any> = new EventEmitter<any>();
+
+  public value!: any;
+  public changeValueInput(): void {
+    this.changeValue.emit(this.value);
+  }
 }

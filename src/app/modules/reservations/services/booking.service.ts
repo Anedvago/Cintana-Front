@@ -16,10 +16,31 @@ export class BookingService {
     );
   }
 
-  public async getAllBookings(): Promise<any[] | null> {
+  public async getBookingsLastMonth(): Promise<any[] | null> {
+    const currentDate = new Date();
+    const startMonth = `${currentDate.getFullYear()}-${currentDate
+      .getMonth()
+      .toString()
+      .padStart(2, '0')}-01`;
+    console.log(startMonth);
     let { data: Rooms, error } = await this.supabaseClient
       .from('Bookings')
-      .select('*');
+      .select('*, Customers(*),Rooms(name),Services(name))')
+      .gte('start', startMonth);
+    return Rooms;
+  }
+
+  public async getBookingById(id: number): Promise<any[] | null> {
+    const currentDate = new Date();
+    const startMonth = `${currentDate.getFullYear()}-${currentDate
+      .getMonth()
+      .toString()
+      .padStart(2, '0')}-01`;
+    console.log(startMonth);
+    let { data: Rooms, error } = await this.supabaseClient
+      .from('Bookings')
+      .select('*, Customers(name),Rooms(name),Services(name))')
+      .eq('id', id);
     return Rooms;
   }
 }

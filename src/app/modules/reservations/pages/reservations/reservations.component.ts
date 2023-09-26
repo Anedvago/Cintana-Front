@@ -41,18 +41,17 @@ export class ReservationsComponent {
 
   public openModalEdit(event: any) {
     this.visivility = 'visible';
-    this.content = event.id;
+    this.content = this.bookings.filter((obj: any) => obj.id == event)[0];
   }
 
   public getAllBookings() {
-    this.roomService.getAllBookings().then((data: any) => {
+    this.roomService.getBookingsLastMonth().then((data: any) => {
       if (data != null) {
-        /* this.bookings = data.map((obj: any) => ({
+        this.bookings = data.map((obj: any) => ({
           ...obj,
-          id: obj.id.toString(), // Convierte el id a cadena
+          title: obj.Customers.name + ' / ' + obj.Rooms.name, // Convierte el id a cadena
         }));
-        console.log(this.bookings.slice()); */
-        this.bookings = data;
+        console.log(this.bookings);
       }
     });
   }

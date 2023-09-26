@@ -11,7 +11,6 @@ import { CalendarOptions, EventSourceInput } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { CardComponent } from 'src/app/core/card/card.component';
 import { ButtonBlueComponent } from 'src/app/core/button-blue/button-blue.component';
-import { BookingService } from '../../services/booking.service';
 @Component({
   selector: 'app-calendar',
   standalone: true,
@@ -26,7 +25,7 @@ import { BookingService } from '../../services/booking.service';
 })
 export class CalendarComponent implements OnChanges {
   @Output()
-  public eventClick: EventEmitter<any> = new EventEmitter<any>();
+  public eventClick: EventEmitter<number> = new EventEmitter<number>();
   @Input()
   public eventsBooking: EventSourceInput | undefined = [];
 
@@ -49,7 +48,6 @@ export class CalendarComponent implements OnChanges {
   }
 
   handleDateClick(arg: any) {
-    console.log(arg.event.id + ' ' + arg.event.title);
-    this.eventClick.emit(arg.event);
+    this.eventClick.emit(arg.event.id);
   }
 }

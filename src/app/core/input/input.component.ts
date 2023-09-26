@@ -20,8 +20,8 @@ export class InputComponent {
 
   @Output()
   public changeValue: EventEmitter<any> = new EventEmitter<any>();
-
-  public value!: any;
+  @Input()
+  public value?: any;
   public changeValueInput(): void {
     this.changeValue.emit(this.value);
   }

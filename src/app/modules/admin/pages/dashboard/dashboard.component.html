@@ -4,7 +4,7 @@
     color="bg-blue-300"
     textColor="text-blue-500"
     colorProgressBar="bg-blue-500"
-    [numRooms]="10"
+    [numRooms]="totalRooms"
   >
     Total <br />
     De Habitaciones
@@ -13,7 +13,7 @@
     color="bg-green-300"
     textColor="text-green-500"
     colorProgressBar="bg-green-500"
-    [numRooms]="4"
+    [numRooms]="freeRooms"
   >
     Habitaciones <br />
     Libres
@@ -22,7 +22,7 @@
     color="bg-red-300"
     textColor="text-red-700"
     colorProgressBar="bg-red-700"
-    [numRooms]="3"
+    [numRooms]="ocupedRooms"
   >
     Habitaciones <br />
     Ocupadas
@@ -31,7 +31,7 @@
     color="bg-orange-200"
     textColor="text-orange-400"
     colorProgressBar="bg-orange-400"
-    [numRooms]="2"
+    [numRooms]="reservedRooms"
   >
     Habitaciones <br />
     Reservadas

@@ -13,6 +13,7 @@ export interface Reservation {
   total: number;
   paid: number;
   wayToPay: string;
+  numberOfPeople: number;
   /*   customer: 1; */
   /*   room: string; */
 }

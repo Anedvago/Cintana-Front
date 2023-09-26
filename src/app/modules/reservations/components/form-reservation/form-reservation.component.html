@@ -4,21 +4,23 @@
     <h2 class="w-full text-center font-bold">Informacion del cliente</h2>
     <h2 class="w-full text-center font-bold col-span-2">Informacion de la reserva</h2>
     <app-input *ngIf="reservation != undefined"  type="text" label="Tipo de identificacion" labelAlign="left" placeholder="Cedula, Id, Nit" [value]="reservation.Customers.typeIdentification"   />
-    <app-input type="text" label="Fecha de entrada" labelAlign="left" placeholder="2023/20/03"/>
-    <app-input type="text" label="Fecha de salida" labelAlign="left" placeholder="2023/20/03"/>
+    <app-input *ngIf="reservation != undefined" type="text" label="Fecha de entrada" labelAlign="left" placeholder="2023/20/03" [value]="reservation.start"/>
+    <app-input *ngIf="reservation != undefined" type="text" label="Fecha de salida" labelAlign="left" placeholder="2023/20/03" [value]="reservation.end"/>
     <!-- <app-input type="text" label="Buscar Servicios" labelAlign="left" placeholder="Decoracion de habitaciones"/> -->
     <app-input *ngIf="reservation != undefined"  type="text" label="Identificacion" labelAlign="left" placeholder="17878589" [value]="reservation.Customers.identification" />
-    <app-input type="text" label="Cantidad de personas" labelAlign="left" placeholder="1, 2, 3..."/>
-    <app-input type="text" label="Habitación" labelAlign="left" placeholder="Ej. 103 "/>
+    <app-input *ngIf="reservation != undefined" type="text" label="Cantidad de personas" labelAlign="left" placeholder="1, 2, 3..." [value]="reservation.numberOfPeople"/>
+    <app-input *ngIf="reservation != undefined" type="text" label="Habitación" labelAlign="left" placeholder="Ej. 103 " [value]="reservation.Rooms.name"/>
     <app-input *ngIf="reservation != undefined" type="text" label="Nombre del titular de la reserva" labelAlign="left" placeholder="Ej. Carlos Gómez " [value]="reservation.Customers.name"/>
-    <app-input type="text" label="Metodo de pago" labelAlign="left" placeholder="Ej. Transferencia "/>
-    <app-input type="text" label="Total a pagar" labelAlign="left" placeholder="Ej. $154.000 "/>
+    <app-input *ngIf="reservation != undefined" type="text" label="Metodo de pago" labelAlign="left" placeholder="Ej. Transferencia " [value]="reservation.wayToPay"/>
+    <app-input *ngIf="reservation != undefined" type="text" label="Total a pagar" labelAlign="left" placeholder="Ej. $154.000" [value]="reservation.total"/>
     <div></div>
     <div></div>
-    <app-input type="text" label="Total cancelado" labelAlign="left" placeholder="Ej. $120.000 "/>
+    <app-input *ngIf="reservation != undefined" type="text" label="Total cancelado" labelAlign="left" placeholder="Ej. $120.000 " [value]="reservation.paid"/>
     <h2 class="w-full text-center font-bold col-span-3">Informacion de los servicios</h2>
     <app-input class="rows-span-2" type="text" label="Buscar Servicios" labelAlign="left" placeholder="Decoracion de habitaciones"/>
-    <app-input class="col-span-2 rows-span-2" type="text" label="Servicios" labelAlign="left" placeholder="Decoracion de habitaciones"/>
+    <div *ngIf="reservation != undefined">
+      <span *ngFor="let service of reservation.Services"> {{service.name}} </span>
+    </div>
     <div></div>
     <div></div>
   </form>

@@ -1,1 +1,40 @@
-<h1>inventario</h1>
+<div
+  class="flex flex-col justify-evenly items-center w-full p-10"
+  style="height: 100vh"
+>
+  <app-card-home
+    img="/assets/img/logo-articulos.png"
+    name="Gestión de artículos"
+    style="height: 18vh; width: 70%"
+    class="my-1 cursor-pointer hover:shadow-lg"
+    (click)="navigateTo('./admin/inventory/articles')"
+  ></app-card-home>
+  <app-card-home
+    img="/assets/img/logo-servicios.png"
+    name="Gestión de servicios"
+    style="height: 18vh; width: 70%"
+    class="my-1 cursor-pointer hover:shadow-lg"
+    (click)="navigateTo('./admin/inventory/services')"
+  ></app-card-home>
+  <app-card-home
+    img="/assets/img/logo-categorias.png"
+    name="Gestión de categorias"
+    style="height: 18vh; width: 70%"
+    class="my-1 cursor-pointer hover:shadow-lg"
+    (click)="navigateTo('./admin/inventory/categories')"
+  ></app-card-home>
+  <app-card-home
+    img="/assets/img/logo-compras.png"
+    name="Documentos de compra"
+    style="height: 18vh; width: 70%"
+    class="my-1 cursor-pointer hover:shadow-lg"
+    (click)="navigateTo('./admin/inventory/purchases')"
+  ></app-card-home>
+  <app-card-home
+    img="/assets/img/logo-bajas.png"
+    name="Documentos de dada de baja"
+    style="height: 18vh; width: 70%"
+    class="my-1 cursor-pointer hover:shadow-lg"
+    (click)="navigateTo('./admin/inventory/discharged')"
+  ></app-card-home>
+</div>

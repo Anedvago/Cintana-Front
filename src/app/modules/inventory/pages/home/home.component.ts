@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
-import { CardHomeComponent } from "src/app/modules/admin/components/card-home/card-home.component";
+import { CardHomeComponent } from "src/app/modules/inventory/components/card-home/card-home.component";
 import { Router } from "@angular/router";
 
 @Component({

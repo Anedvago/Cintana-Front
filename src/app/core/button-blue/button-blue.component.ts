@@ -1,4 +1,4 @@
-import { Component, Output } from "@angular/core";
+import { Component, Output, Input } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { EventEmitter } from "@angular/core";
 
@@ -12,6 +12,9 @@ import { EventEmitter } from "@angular/core";
 export class ButtonBlueComponent {
   @Output()
   public event: EventEmitter<void> = new EventEmitter<void>();
+
+  @Input()
+  public width?: string;
 
   public click() {
     this.event.emit();

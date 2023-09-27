@@ -4,7 +4,7 @@ import { CardRoomsComponent } from '../../components/card-rooms/card-rooms.compo
 import { CardComponent } from 'src/app/core/card/card.component';
 import { TableComponent } from 'src/app/core/table/table.component';
 import { VerticalBarComponent } from '../../components/vertical-bar/vertical-bar.component';
-import { RoomService } from '../../services/room.service';
+import { RoomService } from 'src/app/services/room.service';
 
 @Component({
   selector: 'app-dashboard',

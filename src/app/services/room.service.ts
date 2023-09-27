@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SupabaseClient, createClient } from '@supabase/supabase-js';
-import { environment } from '../../../../environments/environment.development';
+import { environment } from 'src/environments/environment.development';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -19,8 +20,7 @@ export class RoomService {
   public async getAllRooms(): Promise<any[] | null> {
     let { data: Rooms, error } = await this.supabaseClient
       .from('Rooms')
-      .select('id');
-
+      .select('*');
     return Rooms;
   }
 

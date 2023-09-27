@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { ButtonBlueComponent } from 'src/app/core/button-blue/button-blue.component';
 import { InputComponent } from 'src/app/core/input/input.component';
 import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
 import Swal from 'sweetalert2';
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-login',
   standalone: true,

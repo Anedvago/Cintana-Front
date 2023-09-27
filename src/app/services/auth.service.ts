@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
+import { SupabaseResponse } from '../models/SupabaseResponse';
 import {
-  SupabaseClient,
-  createClient,
   AuthError,
   AuthTokenResponse,
+  SupabaseClient,
   User,
+  createClient,
 } from '@supabase/supabase-js';
-import { environment } from '../../../../environments/environment.development';
-import { SupabaseResponse } from 'src/app/models/SupabaseResponse';
+import { environment } from 'src/environments/environment.development';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({

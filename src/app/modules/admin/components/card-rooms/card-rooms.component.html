@@ -26,7 +26,10 @@
     <div class="text-7xl font-semibold row-span-1">{{ numRooms }}</div>
     <div class="bg-gray-200">
       <div
-        [class]="'progress-bar h-2 rounded-lg ' + colorProgressBar"
+        [class]="
+          'progress-bar h-2 rounded-lg tansition duration-500 ' +
+          colorProgressBar
+        "
         [ngStyle]="{ 'width.%': porcent }"
       ></div>
     </div>

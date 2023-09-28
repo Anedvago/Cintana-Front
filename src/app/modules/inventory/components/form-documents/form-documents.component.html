@@ -1,13 +1,23 @@
-<div class="grid grid-cols-4 grid-rows-2 gap-x-3">
-  <app-input placeholder="Parametro de busqueda"></app-input>
-  <app-button-blue width="w-full" class="w-full">Codigo</app-button-blue>
-  <app-button-blue width="w-full" class="w-full">Referencia</app-button-blue>
-  <app-button-blue width="w-full" class="w-full">Nombre</app-button-blue>
-  <app-button-blue width="w-full" class="w-full col-span-2"
-    >Crear nuevo articulo</app-button-blue
-  >
-  <app-button-blue width="w-full" class="w-full">Categoria</app-button-blue>
-  <app-button-blue width="w-full" class="w-full"
-    >Quitar Filtros</app-button-blue
-  >
+<div class="h-full flex items-center justify-center">
+  <div class="grid grid-rows-2 items-center gap-3">
+    <div class="grid grid-cols-4 items-center gap-3 h-min">
+      <app-input-not-label
+        placeholder="Parametro de busqueda"
+      ></app-input-not-label>
+      <app-button-blue width="w-full" class="w-full">Codigo</app-button-blue>
+      <app-button-blue width="w-full" class="w-full"
+        >Referencia</app-button-blue
+      >
+      <app-button-blue width="w-full" class="w-full">Nombre</app-button-blue>
+    </div>
+    <div class="grid grid-cols-4 items-center gap-2 h-min">
+      <app-button-blue width="w-full" class="w-full col-span-2"
+        >Crear nuevo articulo</app-button-blue
+      >
+      <app-button-blue width="w-full" class="w-full">Categoria</app-button-blue>
+      <app-button-blue width="w-full" class="w-full"
+        >Quitar Filtros</app-button-blue
+      >
+    </div>
+  </div>
 </div>

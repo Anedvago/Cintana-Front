@@ -20,4 +20,6 @@ export class CardRoomComponent {
   public typeRoom!: string;
   @Input()
   public nameRoom!: string;
+  @Input()
+  public state!: string;
 }

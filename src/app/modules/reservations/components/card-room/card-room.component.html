@@ -16,6 +16,14 @@
           ' ' +
           textColor
         "
+        [ngClass]="{
+          'text-green-500': state == 'free',
+          'text-red-700': state == 'ocuped',
+          'text-orange-400': state == 'reserved',
+          'bg-green-300': state == 'free',
+          'bg-red-300': state == 'ocuped',
+          'bg-orange-200': state == 'reserved'
+        }"
       >
         bed
       </span>
@@ -35,20 +43,22 @@
         </div>
       </div>
     </div>
-    <div class="text-4xl font-semibold row-span-1">{{ nameRoom }}</div>
+    <div class="text-4xl font-semibold row-span-1 my-4">{{ nameRoom }}</div>
     <div
-      class="
-        bg-blue-600
-        text-white
-        font-normal
-        px-6
-        py-3
-        text-sm
-        shadow-md
-        text-center
-      "
+      class="text-white font-normal px-6 py-3 text-sm shadow-md text-center"
+      [ngClass]="{
+        'bg-green-500': state == 'free',
+        'bg-red-700': state == 'ocuped',
+        'bg-orange-400': state == 'reserved'
+      }"
     >
-      Estado
+      {{
+        state == 'ocuped'
+          ? 'Ocupada'
+          : state == 'reserved'
+          ? 'Reservada'
+          : 'Libre'
+      }}
     </div>
     <!--  <button
       class="bg-blue-600 text-white font-normal px-6 py-3 text-sm shadow-md"

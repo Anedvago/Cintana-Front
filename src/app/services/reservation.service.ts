@@ -38,18 +38,4 @@ export class ReservationService {
 
     return Rooms;
   }
-
-  /* public async getReservationsById(id: number): Promise<any[] | null> {
-    const currentDate = new Date();
-    const startMonth = `${currentDate.getFullYear()}-${currentDate
-      .getMonth()
-      .toString()
-      .padStart(2, '0')}-01`;
-    console.log(startMonth);
-    let { data: Rooms, error } = await this.supabaseClient
-      .from('Bookings')
-      .select('*, Customers(name),Rooms(name),Services(name))')
-      .eq('id', id);
-    return Rooms;
-  } */
 }

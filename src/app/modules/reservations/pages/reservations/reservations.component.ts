@@ -4,8 +4,7 @@ import { CalendarComponent } from '../../components/calendar/calendar.component'
 import { ButtonBlueComponent } from 'src/app/core/button-blue/button-blue.component';
 import { ModalComponent } from 'src/app/core/modal/modal.component';
 import { FormReservationComponent } from '../../components/form-reservation/form-reservation.component';
-import { BookingService } from '../../services/booking.service';
-import { EventSourceInput } from '@fullcalendar/core';
+import { ReservationService } from 'src/app/services/reservation.service';
 
 @Component({
   selector: 'app-reservations',
@@ -23,7 +22,7 @@ import { EventSourceInput } from '@fullcalendar/core';
 export class ReservationsComponent {
   public bookings!: any;
 
-  constructor(private roomService: BookingService) {
+  constructor(private roomService: ReservationService) {
     this.getAllBookings();
   }
 
@@ -45,7 +44,7 @@ export class ReservationsComponent {
   }
 
   public getAllBookings() {
-    this.roomService.getBookingsLastMonth().then((data: any) => {
+    this.roomService.getReservationsLastMonth().then((data: any) => {
       if (data != null) {
         this.bookings = data.map((obj: any) => ({
           ...obj,

@@ -1,27 +1,26 @@
-import { Component } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { FormDocumentsComponent } from "../../components/form-documents/form-documents.component";
-import { TableComponent } from "src/app/core/table/table.component";
-import { ServicesService } from "../../services/services.service";
-import { ArticlesService } from "../../services/articles.service";
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormDocumentsComponent } from '../../components/form-documents/form-documents.component';
+import { TableComponent } from 'src/app/core/table/table.component';
+import { ArticlesService } from '../../services/articles.service';
 
 @Component({
-  selector: "app-articles",
+  selector: 'app-articles',
   standalone: true,
   imports: [CommonModule, FormDocumentsComponent, TableComponent],
-  templateUrl: "./articles.component.html",
-  styleUrls: ["./articles.component.css"],
+  templateUrl: './articles.component.html',
+  styleUrls: ['./articles.component.css'],
 })
 export class ArticlesComponent {
   public columns = [
-    "Cod",
-    "Ref",
-    "Nombre",
-    "Precio",
-    "Stock",
-    "Dpto",
-    "Seccion",
-    "Familia",
+    'Cod',
+    'Ref',
+    'Nombre',
+    'Precio',
+    'Stock',
+    'Dpto',
+    'Seccion',
+    'Familia',
   ];
 
   public rows: any[] = [];

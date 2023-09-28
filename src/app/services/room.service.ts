@@ -28,12 +28,41 @@ export class RoomService {
     const currentDate = new Date();
     const now = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1)
       .toString()
-      .padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')}`;
-    console.log('NOW', now);
+      .padStart(2, '0')}-${currentDate
+      .getDate()
+      .toString()
+      .padStart(2, '0')} ${currentDate
+      .getHours()
+      .toString()
+      .padStart(2, '0')}:${currentDate
+      .getMinutes()
+      .toString()
+      .padStart(2, '0')}:${currentDate
+      .getSeconds()
+      .toString()
+      .padStart(2, '0')}`;
+    const tomorrow = `${currentDate.getFullYear()}-${(
+      currentDate.getMonth() + 1
+    )
+      .toString()
+      .padStart(2, '0')}-${(currentDate.getDate() + 1)
+      .toString()
+      .padStart(2, '0')} ${currentDate
+      .getHours()
+      .toString()
+      .padStart(2, '0')}:${currentDate
+      .getMinutes()
+      .toString()
+      .padStart(2, '0')}:${currentDate
+      .getSeconds()
+      .toString()
+      .padStart(2, '0')}`;
+
     let { data: Rooms, error } = await this.supabaseClient
       .from('Bookings')
       .select('room')
-      .eq('start', now);
+      .gt('start', now)
+      .lt('start', tomorrow);
     /*  .or(`end.eq.${now},start.eq.${now}`); */
 
     return Rooms;
@@ -56,17 +85,12 @@ export class RoomService {
       .getSeconds()
       .toString()
       .padStart(2, '0')}`;
-    console.log(
-      'NOW',
-      now,
-      currentDate.getHours(),
-      currentDate.getMinutes(),
-      currentDate.getSeconds()
-    );
+
     let { data: Rooms, error } = await this.supabaseClient
       .from('Bookings')
       .select('room')
-      .gt('end', now);
+      .gt('end', now)
+      .lt('start', now);
 
     return Rooms;
   }

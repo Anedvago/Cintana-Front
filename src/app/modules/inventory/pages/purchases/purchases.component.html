@@ -1,1 +1,28 @@
-<p>purchases works!</p>
+<div class="h-screen p-1">
+  <div class="h-full grid grid-cols-1 grid-rows-5 grid-flow-col gap-2">
+    <div class="col-span-1 row-span-1">
+      <app-form-documents></app-form-documents>
+    </div>
+    <div class="col-span-1 row-span-4 w-full px-5 pb-5">
+      <div class="h-full w-full grid grid-cols-6 gap-2">
+        <app-table
+          [columns]="columns"
+          [rows]="rows"
+          class="w-full overflow-hidden col-span-1"
+        ></app-table>
+        <div class="w-full overflow-hidden col-span-5 grid grid-rows-6 gap-2">
+          <app-table
+            [columns]="columns"
+            [rows]="rows"
+            class="w-full overflow-hidden row-span-5"
+          ></app-table>
+          <app-table
+            [columns]="columns"
+            [rows]="rows"
+            class="w-full overflow-hidden row-span-1"
+          ></app-table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

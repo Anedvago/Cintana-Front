@@ -1,40 +1,32 @@
-<div
-  class="flex flex-col justify-evenly items-center w-full p-10"
-  style="height: 100vh"
->
-  <app-card-home
-    img="/assets/img/logo-articulos.png"
-    name="Gestión de artículos"
-    style="height: 18vh; width: 70%"
-    class="my-1 cursor-pointer hover:shadow-lg"
-    (click)="navigateTo('./admin/inventory/articles')"
-  ></app-card-home>
-  <app-card-home
-    img="/assets/img/logo-servicios.png"
-    name="Gestión de servicios"
-    style="height: 18vh; width: 70%"
-    class="my-1 cursor-pointer hover:shadow-lg"
-    (click)="navigateTo('./admin/inventory/services')"
-  ></app-card-home>
-  <app-card-home
-    img="/assets/img/logo-categorias.png"
-    name="Gestión de categorias"
-    style="height: 18vh; width: 70%"
-    class="my-1 cursor-pointer hover:shadow-lg"
-    (click)="navigateTo('./admin/inventory/categories')"
-  ></app-card-home>
-  <app-card-home
-    img="/assets/img/logo-compras.png"
-    name="Documentos de compra"
-    style="height: 18vh; width: 70%"
-    class="my-1 cursor-pointer hover:shadow-lg"
-    (click)="navigateTo('./admin/inventory/purchases')"
-  ></app-card-home>
-  <app-card-home
-    img="/assets/img/logo-bajas.png"
-    name="Documentos de dada de baja"
-    style="height: 18vh; width: 70%"
-    class="my-1 cursor-pointer hover:shadow-lg"
-    (click)="navigateTo('./admin/inventory/discharged')"
-  ></app-card-home>
+<div class="container">
+  <app-card-module
+    (click)="navigateTo('articles')"
+    img="logo-articulos.png"
+    title="Gestion de articulos"
+  >
+  </app-card-module>
+  <app-card-module
+    (click)="navigateTo('services')"
+    img="logo-servicios.png"
+    title="Gestion de servicios"
+  >
+  </app-card-module>
+  <app-card-module
+    (click)="navigateTo('categories')"
+    img="logo-categorias.png"
+    title="Gestion de categorias"
+  >
+  </app-card-module>
+  <app-card-module
+    (click)="navigateTo('purchases')"
+    img="logo-compras.png"
+    title="modulo de documentos de compra"
+  >
+  </app-card-module>
+  <app-card-module
+    (click)="navigateTo('discharges')"
+    img="logo-bajas.png"
+    title="modulo de documentos de baja"
+  >
+  </app-card-module>
 </div>

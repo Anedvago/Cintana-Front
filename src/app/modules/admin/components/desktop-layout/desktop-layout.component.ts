@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { VerticalNavbarComponent } from 'src/app/core/vertical-navbar/vertical-navbar.component';
+import { ToolbarComponent } from '../../../../shared/toolbar/toolbar.component';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-desktop-layout',
   standalone: true,
-  imports: [CommonModule, VerticalNavbarComponent, RouterOutlet],
+  imports: [CommonModule, ToolbarComponent, RouterOutlet],
   templateUrl: './desktop-layout.component.html',
   styleUrls: ['./desktop-layout.component.css'],
 })

@@ -1,10 +1,6 @@
-<div class="h-screen p-1">
-  <div class="h-full grid grid-cols-1 grid-rows-5 grid-flow-col gap-3">
-    <div class="col-span-1 row-span-1">
-      <app-form-documents></app-form-documents>
-    </div>
-    <div class="col-span-1 row-span-4 w-full px-5 pb-5">
-      <app-table [columns]="columns" [rows]="rows" class="w-full"></app-table>
-    </div>
-  </div>
+<div class="container">
+  <app-form-articles type="SERVICE" (createNew)="openDialog()" (quitFilters)="quitFilters()" (filterByCode)="filterByCode($event)"
+    (filterByRef)="filterByRef($event)" (filterByName)="filterByName($event)" />
+  <app-table (clickTr)="editArticle($event)" [columns]="columns" [columnsDisplay]="columnsDisplay"
+    [data]="filterRows" />
 </div>

@@ -5,7 +5,7 @@ import { DesktopLayoutComponent } from './components/desktop-layout/desktop-layo
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { PurchasesComponent } from './pages/purchases/purchases.component';
-import { DischargedComponent } from './pages/discharged/discharged.component';
+import { DischargesComponent } from './pages/discharges/discharges.component';
 export const routes: Routes = [
   {
     path: '',
@@ -32,8 +32,8 @@ export const routes: Routes = [
         component: PurchasesComponent,
       },
       {
-        path: 'discharged',
-        component: DischargedComponent,
+        path: 'discharges',
+        component: DischargesComponent,
       },
     ],
   },

@@ -1,13 +1,8 @@
-<app-modal (close)="closeModal()" [class]="'fixed z-50 ' + visivility">
-  <app-form-reservation />
-</app-modal>
-<div class="flex flex-col h-full items-center">
-  <app-button-blue (click)="openModalNew()" class="my-5 w-full text-right mr-28"
-    >Nueva reservacion
-  </app-button-blue>
-  <app-calendar
-    (eventClick)="openModalEdit($event)"
-    class="calendar bg-red-500"
-    [eventsBooking]="bookings"
-  ></app-calendar>
+<div class="container">
+  <header>
+    <app-button-blue>Crear Reserva</app-button-blue>
+  </header>
+  <section>
+    <full-calendar [options]="calendarOptions"></full-calendar>
+  </section>
 </div>

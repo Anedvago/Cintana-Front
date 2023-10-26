@@ -1,28 +1,31 @@
-<!-- <div class="bg-red-300 p-3 h-full">
-  <div class="bg-green-300 h-full">
-    <div>Holas1</div>
-import { AccordionComponent } from 'src/app/core/accordion/accordion.component';
-    <div>Holas2</div>
-  </div>
-</div>
- -->
-
-<div class="h-screen p-1 bg-red-300">
-  <div class="h-full grid grid-cols-2 gap-3 bg-green-300">
-    <div>
-      <app-card>
-        <div class="flex flex-col justify-center items-center h-full">
-          <ul class="w-full">
-            <li class="bg-gray-100 p-3 my-1 hover:bg-gray-200 cursor-pointer">
-              Hol1
-            </li>
-            <li class="bg-gray-100 p-3 my-1 hover:bg-gray-200 cursor-pointer">
-              Hol2
-            </li>
-          </ul>
-        </div>
-      </app-card>
+<div class="container">
+  <header>
+    <div class="btn">
+      <app-button-blue (pressClick)="openDialog()"
+        >Crear Categoria</app-button-blue
+      >
     </div>
-    <div><app-card> Holas </app-card></div>
-  </div>
+  </header>
+  <main>
+    <section>
+      <h4>Categorias de articulos</h4>
+      <app-accordion-categori
+        (editCategory)="editCategory($event)"
+        (deleteCategory)="deleteCategory($event)"
+        [departaments]="departamentHandler.articlesDptos"
+        [sections]="sectionHandler.articlesSections"
+        [families]="familyHandler.articlesFamilies"
+      />
+    </section>
+    <section>
+      <h4>Categorias de servicios</h4>
+      <app-accordion-categori
+        (editCategory)="editCategory($event)"
+        (deleteCategory)="deleteCategory($event)"
+        [departaments]="departamentHandler.servicesDptos"
+        [sections]="sectionHandler.servicesSections"
+        [families]="familyHandler.servicesFamilies"
+      />
+    </section>
+  </main>
 </div>

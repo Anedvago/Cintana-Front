@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './front.component.html',
-  styleUrls: ['./front.component.css'],
+  styleUrls: ['./front.component.css']
 })
-export class FrontComponent {}
+export class FrontComponent {
+
+}
